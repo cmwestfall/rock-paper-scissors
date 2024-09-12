@@ -15,6 +15,14 @@ const getComputerChoice = () => {
     return choiceArray[computerChoice];
 };
 
+const playerWins = (player, computer) => {
+    return (
+        (player === 'rock' & computer === 'scissors') ||
+        (player === 'scissors' & computer === 'paper') ||
+        (player === 'paper' & computer === 'rock')
+    );
+};
+
 const playRound = () => {};
 
 choiceButtons.addEventListener('click', () => {
