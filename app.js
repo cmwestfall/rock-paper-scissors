@@ -8,7 +8,12 @@ let computerScore = 0;
 
 const getHumanChoice = () => {};
 
-const getComputerChoice = () => {};
+const getComputerChoice = () => {
+    const choiceArray = ['rock', 'paper', 'scissors'];
+    const computerChoice = Math.floor(Math.random()*choiceArray.length);
+
+    return choiceArray[computerChoice];
+};
 
 const playRound = () => {};
 
