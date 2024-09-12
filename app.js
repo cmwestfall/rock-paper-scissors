@@ -35,8 +35,17 @@ const playRound = (humanChoice, computerChoice) => {
     } else if (humanChoice === computerChoice) {
         console.log(`It's a tie!`);
     } else {
+        computerScore++;
         console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
     }
 };
 
-playRound(getHumanChoice(), getComputerChoice());
+const playGame = () => {
+    for (let i=0; i<5; i++) {
+        playRound(getHumanChoice(), getComputerChoice());
+        console.log(`Your Score: ${humanScore}`);
+        console.log(`Computer Score: ${computerScore}`);
+    }
+};
+
+playGame();
