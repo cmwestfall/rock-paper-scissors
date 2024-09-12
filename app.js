@@ -2,7 +2,11 @@ const getHumanChoice = () => {
     let messagePrompt = prompt("Please choose rock, paper, or scissors");
     
     if (messagePrompt.toLowerCase() === 'rock' | messagePrompt.toLowerCase() === 'paper' | messagePrompt.toLowerCase() === 'scissors') {
-        const humanChoice = 
+        const humanChoice = messagePrompt.toLowerCase();
+        console.log(humanChoice);
+    } else {
+        alert('Please enter a valid response.')
+        getHumanChoice();
     }
 };
 
