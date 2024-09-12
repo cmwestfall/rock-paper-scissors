@@ -40,12 +40,4 @@ const playRound = (humanChoice, computerChoice) => {
     }
 };
 
-const playGame = () => {
-    for (let i=0; i<5; i++) {
-        playRound(getHumanChoice(), getComputerChoice());
-        console.log(`Your Score: ${humanScore}`);
-        console.log(`Computer Score: ${computerScore}`);
-    }
-};
 
-playGame();
