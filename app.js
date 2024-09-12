@@ -1,9 +1,12 @@
+let humanScore = 0;
+let computerScore = 0;
+
 const getHumanChoice = () => {
     let messagePrompt = prompt("Please choose rock, paper, or scissors");
     
     if (messagePrompt.toLowerCase() === 'rock' | messagePrompt.toLowerCase() === 'paper' | messagePrompt.toLowerCase() === 'scissors') {
         const humanChoice = messagePrompt.toLowerCase();
-        console.log(humanChoice);
+        return humanChoice;
     } else {
         alert('Please enter a valid response.')
         getHumanChoice();
@@ -17,4 +20,23 @@ const getComputerChoice = () => {
     return choiceArray[computerChoice];
 };
 
-getHumanChoice();
+const playerWins = (player, computer) => {
+    return (
+        (player === 'rock' & computer === 'scissors') ||
+        (player === 'scissors' & computer === 'paper') ||
+        (player === 'paper' & computer === 'rock')
+    );
+};
+
+const playRound = (humanChoice, computerChoice) => {
+    if (playerWins(humanChoice, computerChoice)) {
+        humanScore++;
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+    } else if (humanChoice === computerChoice) {
+        console.log(`It's a tie!`);
+    } else {
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+    }
+};
+
+playRound(getHumanChoice(), getComputerChoice());
