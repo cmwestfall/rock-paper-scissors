@@ -38,6 +38,13 @@ const playRound = (humanChoice) => {
     }
 };
 
+if (humanScore === 5) {
+    gameResult.textContent = 'You win!';
+} else {
+    gameResult.textContent = 'You lose!';
+}
+
+
 rockButton.addEventListener('click', () => playRound('rock'));
 scissorsButton.addEventListener('click', () => playRound('scissors'));
 paperButton.addEventListener('click', () => playRound('paper'));
