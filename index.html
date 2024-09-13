@@ -6,9 +6,17 @@
         <title>Rock, Paper, Scissors</title>
     </head>
     <body>
-        <button class='choices' id="button-rock">Rock</button>
-        <button class='choices' id="button-paper">Paper</button>
-        <button class='choices' id="button-scissors">Scissors</button>
+        <h1>Rock, Paper, Scissors</h1>
+        <div class="score-container">
+            <span>Player Score: <span class="score" id="player-score">0</span></span>
+            <span>Computer Score: <span class="score" id="computer-score">0</span></span>
+        </div>
+        <button class='choices' id="btn-rock">Rock</button>
+        <button class='choices' id="btn-paper">Paper</button>
+        <button class='choices' id="btn-scissors">Scissors</button>
+        <div class="result-container">
+            <p id="result-msg"></p>
+        </div>
         <script src="app.js"></script>
     </body>
 </html>

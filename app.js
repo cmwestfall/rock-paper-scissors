@@ -1,12 +1,13 @@
-const rockButton = document.getElementById('rock');
-const scissorsButton = document.getElementById('scissors');
-const paperButton = document.getElementById('paper');
-const choiceButtons = document.querySelectorAll('button.choices');
+const rockButton = document.getElementById('btn-rock');
+const scissorsButton = document.getElementById('btn-scissors');
+const paperButton = document.getElementById('btn-paper');
+const humanScoreMsg = document.getElementById('player-score');
+const computerScoreMsg = document.getElementById('computer-score');
+
+const gameResult = document.querySelector('div.result-msg');
 
 let humanScore = 0;
 let computerScore = 0;
-
-const getHumanChoice = () => {};
 
 const getComputerChoice = () => {
     const choiceArray = ['rock', 'paper', 'scissors'];
@@ -23,8 +24,20 @@ const playerWins = (player, computer) => {
     );
 };
 
-const playRound = () => {};
+const playRound = (humanChoice) => {
+    const computerResult = getComputerChoice();
 
-choiceButtons.addEventListener('click', () => {
-    playRound()
-};);
+    if (playerWins(humanChoice, computerResult)) {
+        humanScore++;
+        humanScoreMsg.textContent = humanScore;
+    } else if (humanChoice === computerResult) {
+        console.log(`It's a tie!`);
+    } else {
+        computerScore++;
+        computerScoreMsg.textContent = computerScore;
+    }
+};
+
+rockButton.addEventListener('click', () => playRound('rock'));
+scissorsButton.addEventListener('click', () => playRound('scissors'));
+paperButton.addEventListener('click', () => playRound('paper'));
